@@ -32,7 +32,7 @@ function loadMoreBgm(loader){
                 total='未知';
             }
             else {
-                status=item.status/item.count*100;
+                status = Math.min(100, item.status / item.count * 100); // 限制 status 在 0 到 100 之间
                 total=String(item.count);
             };
             var html=`<a class="bgm-item" data-id="`+item.id+`" href="`+item.url+`" target="_blank">
